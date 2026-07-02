@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click the Button!</h1>
+    <button id="clickBtn" onclick="incrementCount()">Click Me</button>
+    <div id="score">Clicks: <span id="clickScore">0</span></div>
+
+<script>
+    let count = 0;
+    function incrementCount() {
+        count++;
+        document.getElementById("clickScore").innerText = count;
+        
+        // Jaise hi 20 clicks pure honge, Game Over ad chalegi aur game reset hoga
+        if(count >= 20) {
+            setTimeout(() => {
+                showGameOverAd();
+            }, 100);
+        }
+    }
+
+    function showGameOverAd() {
+        window.open("https://clksite.com/30039658", "_blank");
+    }
+</script>
+
+</body>
+</html>
